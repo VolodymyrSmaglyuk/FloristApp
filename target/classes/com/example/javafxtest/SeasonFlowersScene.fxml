@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="527.0" prefWidth="832.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxtest.SeasonFlowersSceneController">
+   <children>
+      <Button layoutX="14.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToScene1" text="Go to menu" />
+      <Button layoutX="269.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteFlower" prefHeight="25.0" prefWidth="91.0" text="Delete" />
+      <Button layoutX="377.0" layoutY="99.0" mnemonicParsing="false" onAction="#updateFlower" prefHeight="25.0" prefWidth="116.0" text="Update" />
+      <TableView fx:id="table" layoutX="37.0" layoutY="264.0" prefHeight="200.0" prefWidth="753.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="Flower_ID" />
+            <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="color" prefWidth="75.0" text="Color" />
+            <TableColumn fx:id="freshnessLevel" prefWidth="90.0" text="FreshnessLevel" />
+            <TableColumn fx:id="stemLength" prefWidth="75.0" text="StemLength" />
+            <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="flowerSeason" prefWidth="90.0" text="FlowerSeason" />
+            <TableColumn fx:id="countryOfOrigin" prefWidth="100.0" text="CountryOfOrigin" />
+            <TableColumn fx:id="bouquetId" prefWidth="100.0" text="BouquetID" />
+        </columns>
+      </TableView>
+      <Text layoutX="320.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Season Flowers">
+         <font>
+            <Font name="System Bold Italic" size="31.0" />
+         </font>
+      </Text>
+      <Button layoutX="171.0" layoutY="191.0" mnemonicParsing="false" onAction="#insertFlower" prefHeight="30.0" prefWidth="87.0" text="Add flower" />
+      <Button layoutX="509.0" layoutY="99.0" mnemonicParsing="false" onAction="#refreshData" prefHeight="25.0" prefWidth="91.0" text="Refresh" />
+      <TextField fx:id="flowerId" layoutX="269.0" layoutY="58.0" prefHeight="25.0" prefWidth="149.0" promptText="Flower ID" />
+      <TextField fx:id="reduceLevel" layoutX="431.0" layoutY="58.0" prefHeight="27.0" prefWidth="169.0" promptText="Number to reduce freshness" />
+      <TextField fx:id="freshnessLevelOFNewFlower" layoutX="17.0" layoutY="99.0" promptText="Freshness level" />
+      <TextField fx:id="colorOfNewFlower" layoutX="17.0" layoutY="66.0" promptText="Color" />
+      <TextField fx:id="stemLengthOFNewFlower" layoutX="17.0" layoutY="131.0" promptText="Stem length" />
+      <TextField fx:id="priceOFNewFlower" layoutX="17.0" layoutY="165.0" promptText="Price" />
+      <TextField fx:id="flowerSeasonOfNewFlower" layoutX="17.0" layoutY="194.0" promptText="Flower season" />
+      <TextField fx:id="countryOfOriginOfNewFlower" layoutX="17.0" layoutY="224.0" promptText="Country  of origin" />
+      <TextField fx:id="nameOfNewFlower" layoutX="17.0" layoutY="34.0" promptText="Name" />
+      <TextField fx:id="amountOfFlowers" layoutX="171.0" layoutY="158.0" prefHeight="27.0" prefWidth="87.0" promptText="Amount" />
+      <Button layoutX="171.0" layoutY="221.0" mnemonicParsing="false" onAction="#clearInput" prefHeight="30.0" prefWidth="87.0" text="Clear" />
+      <Text fontSmoothingType="LCD" layoutX="18.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New flower data:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="details" layoutX="617.0" layoutY="56.0" prefHeight="190.0" prefWidth="200.0" />
+      <Text layoutX="617.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result Console">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Separator layoutX="263.0" layoutY="2.0" orientation="VERTICAL" prefHeight="251.0" prefWidth="2.0" />
+      <Separator layoutY="254.0" prefHeight="3.0" prefWidth="265.0" />
+      <Separator layoutX="265.0" layoutY="129.0" prefHeight="3.0" prefWidth="339.0" />
+      <Separator layoutX="602.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="259.0" prefWidth="6.0" />
+      <Separator layoutX="263.0" layoutY="254.0" prefHeight="3.0" prefWidth="569.0" />
+      <Separator layoutX="265.0" layoutY="52.0" prefHeight="3.0" prefWidth="339.0" />
+      <MenuButton layoutX="379.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Save in file" textAlignment="CENTER">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#saveInFileAllFlowers" text="all flowers" />
+          <MenuItem mnemonicParsing="false" onAction="#saveInFileFlowersWithoutBouquets" text="flowers without bouquets" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>
